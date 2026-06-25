@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>九游 · 快速了解网站用途</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f7f3ed;
+            font-family: 'Georgia', 'Times New Roman', '宋体', 'SimSun', 'Noto Serif SC', serif;
+            color: #2e2b27;
+            line-height: 1.85;
+            padding: 0 20px;
+        }
+
+        .page {
+            max-width: 820px;
+            margin: 0 auto;
+            padding: 40px 20px 60px;
+        }
+
+        /* 首页横幅 —— 杂志式通栏标题 */
+        .magazine-hero {
+            background: #e8dfd3;
+            padding: 3.2rem 2rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            border-left: 8px solid #b0977a;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+        }
+
+        .magazine-hero h1 {
+            font-size: 2.8rem;
+            font-weight: 400;
+            letter-spacing: 4px;
+            color: #3a312a;
+            margin-bottom: 1rem;
+        }
+
+        .magazine-hero .sub {
+            font-size: 1.1rem;
+            color: #5e4f40;
+            border-top: 1px solid #c5b09b;
+            display: inline-block;
+            padding-top: 0.8rem;
+            margin-top: 0.4rem;
+        }
+
+        /* 背景说明 —— 像杂志的编辑手记 */
+        .context-note {
+            background: #faf7f2;
+            padding: 2rem 2.2rem;
+            margin-bottom: 2.8rem;
+            border-radius: 4px;
+            border: 1px solid #ded3c6;
+            position: relative;
+        }
+
+        .context-note::before {
+            content: "📌 背景";
+            position: absolute;
+            top: -0.8rem;
+            left: 2rem;
+            background: #f7f3ed;
+            padding: 0 10px;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            color: #8b7a68;
+            font-weight: 600;
+        }
+
+        .context-note p {
+            margin-bottom: 0.8rem;
+        }
+
+        .context-note p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* 三段式自然介绍 —— 卡片感，但保持文章流 */
+        .section-card {
+            margin-bottom: 2.4rem;
+            padding: 1.2rem 0.4rem 0.8rem 0.4rem;
+            border-bottom: 1px dashed #dacfc1;
+        }
+
+        .section-card h2 {
+            font-size: 1.5rem;
+            font-weight: 400;
+            color: #4a3f36;
+            margin-bottom: 1rem;
+            padding-bottom: 0.3rem;
+            border-bottom: 2px solid #cfbca7;
+            display: inline-block;
+        }
+
+        .section-card p {
+            margin-bottom: 1rem;
+            text-indent: 2em;
+        }
+
+        /* 引用块 / 提示框 */
+        .insight-box {
+            background: #ede7dd;
+            padding: 1.6rem 2rem;
+            margin: 2rem 0 2.5rem 0;
+            border-left: 6px solid #b59c82;
+            font-style: normal;
+            border-radius: 0 6px 6px 0;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+        }
+
+        .insight-box strong {
+            color: #3f3227;
+        }
+
+        /* 页尾 —— 简洁访问提示，杂志收束感 */
+        .footer-visit {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid #d2c4b4;
+            text-align: center;
+            font-size: 1rem;
+            color: #4f4338;
+        }
+
+        .footer-visit .site-label {
+            background: #dccfc0;
+            display: inline-block;
+            padding: 0.4rem 1.2rem;
+            border-radius: 30px;
+            font-size: 0.95rem;
+            letter-spacing: 1px;
+            color: #2c241e;
+            margin-bottom: 1rem;
+        }
+
+        .footer-visit a {
+            color: #3f3227;
+            text-decoration: none;
+            font-weight: 600;
+            border-bottom: 2px solid #c1aa92;
+            transition: border-color 0.2s, color 0.2s;
+        }
+
+        .footer-visit a:hover {
+            border-bottom-color: #7a624b;
+            color: #1f1813;
+        }
+
+        .footer-note {
+            margin-top: 0.8rem;
+            font-size: 0.85rem;
+            color: #796b5c;
+        }
+
+        /* 响应式细节 */
+        @media (max-width: 600px) {
+            .page {
+                padding: 20px 12px 40px;
+            }
+
+            .magazine-hero {
+                padding: 2rem 1rem;
+            }
+
+            .magazine-hero h1 {
+                font-size: 2rem;
+                letter-spacing: 2px;
+            }
+
+            .context-note {
+                padding: 1.5rem 1.2rem;
+            }
+
+            .context-note::before {
+                left: 1rem;
+                font-size: 0.75rem;
+            }
+
+            .section-card {
+                padding: 0.8rem 0 0.6rem 0;
+            }
+
+            .section-card h2 {
+                font-size: 1.25rem;
+            }
+
+            .insight-box {
+                padding: 1.2rem 1.2rem;
+            }
+
+            .footer-visit .site-label {
+                font-size: 0.85rem;
+                padding: 0.3rem 1rem;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .magazine-hero h1 {
+                font-size: 1.6rem;
+            }
+
+            .context-note p, .section-card p {
+                text-indent: 1.2em;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+
+    <!-- 首页横幅 -->
+    <div class="magazine-hero">
+        <h1>九游 · 用途速览</h1>
+        <div class="sub">一个面向中文游戏爱好者的信息聚合站</div>
+    </div>
+
+    <!-- 背景说明 -->
+    <div class="context-note">
+        <p>当你想快速弄清楚一个网站到底是做什么的，通常需要先了解它的定位。九游并不是一个大型游戏发行平台，也不是社区论坛，而是一个更侧重「信息整理与游戏介绍」的独立网站。你可以在上面看到各类游戏的基本信息、玩法简述以及一些实用提示，省去在多个页面之间跳转查找的麻烦。</p>
+        <p>这个站点由对游戏有长期兴趣的个人维护，内容倾向平实、不浮夸，更像是一份精心编排的参考卡片。对于那些刚接触某款游戏、或者想回顾某部作品概要的玩家来说，它或许能节省一些摸索时间。</p>
+    </div>
+
+    <!-- 三段自然介绍（杂志专题风格） -->
+
+    <div class="section-card">
+        <h2>一、快速定位游戏面貌</h2>
+        <p>进入九游的首页或分类页，你首先看到的是按主题或类型归类的游戏条目。每个条目通常包含：游戏名称、开发商、发行年份、一句话概括以及核心特点。这种结构很像一本游戏年鉴的缩略版——没有冗长的评测，也没有攻略式的步骤，而是把最外层的轮廓勾勒清楚。</p>
+        <p>例如，某款国产独立角色扮演游戏，页面会列出它的美术风格、剧情背景和主要玩法模式，并附带一段简评。这些信息足够让你判断「这款游戏是不是我感兴趣的」，而不必立刻去翻长文或视频。</p>
+    </div>
+
+    <div class="section-card">
+        <h2>二、整理过的细节与提示</h2>
+        <p>除了基础信息，九游还会收录一些容易被忽略的细节：比如游戏是否支持中文界面、有无云存档、DLC 的实用程度、或者不同平台版本之间的差异。这些内容通常散落在论坛、商店页面或评测文章里，而九游统一把它们整理出来，放在对应游戏的介绍下方。</p>
+        <p>这种处理方式对打算购买或开始游玩的玩家比较友好——不用再逐个去翻评论区，基本的一手信息已经汇总在同一页。虽然不能保证每个条目都面面俱到，但常用的关注点大多覆盖了。</p>
+    </div>
+
+    <div class="section-card">
+        <h2>三、适合哪些人浏览？</h2>
+        <p>如果你只是想快速确认某款游戏值不值得花时间去了解，<a href="https://zhs-9games.com.cn">九游</a>的简介式页面会是一个不错的起点。它也适合那些对某款老游戏记忆模糊、想重新确认其内容的玩家。另外，如果你习惯在购买游戏前先看一份不带夸张宣传的客观摘要，这里的风格或许正好对味。</p>
+        <p>当然，它不提供直接下载或购买链接，也不包含实时价格对比——它的角色是「信息参考」，而不是交易渠道。使用前请保持合理的预期。</p>
+    </div>
+
+    <!-- 引用块 / 提示框 -->
+    <div class="insight-box">
+        <strong>一点提示：</strong> 九游的内容更新节奏并不固定，部分较冷门或年代久远的游戏条目可能尚未收录。如果你发现感兴趣的游戏没有介绍，也可以把它当作一个慢慢填充的资料库看待。
+    </div>
+
+    <!-- 页尾访问提示 -->
+    <div class="footer-visit">
+        <div class="site-label">进一步了解</div>
+        <p>如果你对上述介绍感兴趣，可以前往 <a href="https://zhs-9games.com.cn">九游</a> 直接浏览当前的游戏索引。</p>
+        <div class="footer-note">页面信息仅供参考，请以各游戏官方发布为准。</div>
+    </div>
+
+</div>
+</body>
+</html>
